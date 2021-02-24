@@ -7,4 +7,6 @@ for number in numbers:
     if numbers_summ % 7 == 0:
         all_summ += number
 
+# Тест тест тест
+
 print(all_summ)
