@@ -12,7 +12,7 @@ seconds = duration % s_in_m
 months = 0
 if days >= 31:
     days_summ = 0
-    for i in range(len(month_list)-1):
+    for i in range(len(month_list) - 1):
         days_summ += month_list[i]
         if days == days_summ:
             months = i+1
