@@ -1,5 +1,6 @@
 def thesaurus_adv(*args):
     all_names_dict = {}
+    """Добавление переданных имен и фамилий в словарь"""
     for arg in args:
         sep_arg = arg.split()
         if 1 >= len(sep_arg) or len(sep_arg) >= 3:  # Если в списке приходит только имя или ФИО и т.п.

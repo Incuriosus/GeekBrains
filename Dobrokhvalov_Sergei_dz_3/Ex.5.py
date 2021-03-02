@@ -4,19 +4,20 @@ adverbs = ["сегодня", "вчера", "завтра", "позавчера",
 adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
 
 
-def get_jokes(n, repeat=True):
+def get_jokes(num, joke_nouns=nouns, joke_adverbs=adverbs, joke_adjectives=adjectives, repeat=True):
     result = []
     if repeat:
-        for i in range(n):
-            result.append(f'{random.choice(nouns)} {random.choice(adverbs)} {random.choice(adjectives)}')
+        for i in range(num):
+            result.append(f'{random.choice(joke_nouns)} {random.choice(joke_adverbs)} {random.choice(joke_adjectives)}')
         return result
     else:
-        random.shuffle(nouns)
-        random.shuffle(adverbs)
-        random.shuffle(adjectives)
-        for noun, adverb, adjective in zip(nouns, adverbs, adjectives):
+        random.shuffle(joke_nouns)
+        random.shuffle(joke_adverbs)
+        random.shuffle(joke_adjectives)
+        for noun, adverb, adjective in zip(joke_nouns, joke_adverbs, joke_adjectives):
             result.append(f'{noun} {adverb} {adjective}')
-        return result[0:n]
+        return result[0:num]
 
 
-print(get_jokes(5, repeat=False))
+print(get_jokes(9))
+print(get_jokes(3, repeat=False))

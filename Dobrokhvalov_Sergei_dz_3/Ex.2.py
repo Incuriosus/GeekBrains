@@ -14,10 +14,11 @@ numbers = {
 
 
 def num_translate_adv(word, word_dict=numbers):
+    """Перевод по заданному словарю"""
     if word.islower():
-        print(word_dict.get(word))
+        return word_dict.get(word)
     else:
-        print(word_dict.get(word.lower()).title())
+        return word_dict.get(word.lower()).title()
 
 
-num_translate_adv(input('Введите число от нуля до десяти на английском:'))
+print(num_translate_adv(input('Введите число от нуля до десяти на английском:')))
