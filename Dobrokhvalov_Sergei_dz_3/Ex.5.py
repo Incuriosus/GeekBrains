@@ -5,6 +5,7 @@ adjectives = ["веселый", "яркий", "зеленый", "утопичн�
 
 
 def get_jokes(num, joke_nouns=nouns, joke_adverbs=adverbs, joke_adjectives=adjectives, repeat=True):
+    """Создает шутку из трех явно заданных списков слов"""
     result = []
     if repeat:
         for i in range(num):

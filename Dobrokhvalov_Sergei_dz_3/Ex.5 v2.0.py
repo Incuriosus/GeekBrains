@@ -10,6 +10,7 @@ words = {
 
 
 def get_jokes(num, word_dict=words, repeat=True):
+    """Создает шутку из словаря"""
     result = []
     if repeat:
         for i in range(num):
