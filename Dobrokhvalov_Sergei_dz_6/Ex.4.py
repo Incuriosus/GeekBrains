@@ -1,6 +1,6 @@
 with open('users.csv', 'r', encoding='utf-8') as users:
     with open('hobby.csv', 'r', encoding='utf-8') as hobby:
-        with open('users_hobby.txt', 'a', encoding='utf-8') as users_hobby:
+        with open('users_hobby.txt', 'w', encoding='utf-8') as users_hobby:
             n1 = "\n"
             for line in users:
                 hobby_counter = hobby.readline()
