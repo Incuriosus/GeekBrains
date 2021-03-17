@@ -14,5 +14,7 @@ with open('users.csv', 'r', encoding='utf-8') as users:
                 for user, hobby in zip(user_content, hobby_content):
                     users_hobby_content[user] = hobby
             users_hobby.write(json.dumps(users_hobby_content))
-            print(users_hobby_content)
 
+with open('users_hobby.json', 'r', encoding='utf-8') as users_hobby:
+    users_hobby_con = json.loads(users_hobby.read())
+    print(users_hobby_con)
