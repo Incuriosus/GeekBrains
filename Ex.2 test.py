@@ -1,15 +1,25 @@
-import os
+def val_checker(check_arg):
+    def _val_checker(callback):
+        def wrapper(arg):
+            try:
+                if check_arg(arg):
+                    return callback(arg)
+                else:
+                    raise ValueError
+            except ValueError:
+                print(f'ValueError: wrong val {arg}')
+
+        return wrapper
+
+    return _val_checker
 
 
-def scan_files(path='./'):
-    for root, dirs, files in os.walk(path):
-        print(files)
-        for file in files:
-            print(os.path.basename(file))
-            print(type(os.stat(file)))
-            print(os.stat(file).st_size)
+@val_checker(lambda x: x > 0)
+def calc_cube(x):
+    return x ** 3
 
 
-scan_files()
+if __name__ == '__main__':
+    print(calc_cube(-5))
 
 

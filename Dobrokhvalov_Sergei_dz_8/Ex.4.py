@@ -1,7 +1,6 @@
 def val_checker(check_arg):
     def _val_checker(callback):
         def wrapper(arg):
-            print(callback.__name__)
             if check_arg(arg):
                 return callback(arg)
             else:
