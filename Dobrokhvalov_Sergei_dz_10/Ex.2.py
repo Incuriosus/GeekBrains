@@ -2,30 +2,43 @@ class Clothes:
     def __init__(self, name):
         self.name = name
 
+    def consumption(self):
+        return NotImplementedError
+
 
 class Coat(Clothes):
     def __init__(self, name, size):
         super().__init__(name)
         self.v = float(size)
-        self.consumption = self.v/6.5 + 0.5
+        self._consumption = None
+
+    @property
+    def consumption(self):
+        self._consumption = self.v / 6.5 + 0.5
+        return self._consumption
 
 
 class Costume(Clothes):
     def __init__(self, name, height):
         super().__init__(name)
         self.h = float(height)
-        self.consumption = self.h * 2 + 0.3
+        self._consumption = None
+
+    @property
+    def consumption(self):
+        self._consumption = self.h * 2 + 0.3
+        return self._consumption
 
 
 class AllProducts:
     def __init__(self):
-        self._products = set()
+        self._products = []
 
     def __iter__(self):
         return (el for el in self._products)
 
     def add(self, product):
-        self._products.add(product)
+        self._products.append(product)
 
     def remove(self, product):
         if product in self._products:

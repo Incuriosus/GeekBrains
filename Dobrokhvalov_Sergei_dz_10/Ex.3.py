@@ -3,23 +3,19 @@ class Cell:
         self.cells = cells
 
     def __add__(self, other):
-        result = Cell(self.cells + other.cells)
-        return result
+        return Cell(self.cells + other.cells)
 
     def __sub__(self, other):
         if self.cells < other.cells:
             print('Вычитание невозможно')
         else:
-            result = Cell(self.cells - other.cells)
-            return result
+            return Cell(self.cells - other.cells)
 
     def __mul__(self, other):
-        result = Cell(self.cells * other.cells)
-        return result
+        return Cell(self.cells * other.cells)
 
     def __truediv__(self, other):
-        result = Cell(self.cells // other.cells)
-        return result
+        return Cell(self.cells // other.cells)
 
     def make_order(self, n):
         result = []

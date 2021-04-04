@@ -1,11 +1,11 @@
 class Matrix:
     def __init__(self, matrix):
         if isinstance(matrix, list):
-            chek_list = [i for i in matrix if isinstance(i, list)]
-            if len(chek_list) == len(matrix):
+            check_list = [i for i in matrix if isinstance(i, list)]
+            if len(check_list) == len(matrix):
                 for idx in range(len(matrix)):
-                    chek_list = [i for i in matrix[idx] if isinstance(i, int)]
-                    if len(chek_list) == len(matrix[idx]) == len(matrix[idx - 1]):
+                    check_list = [i for i in matrix[idx] if isinstance(i, int)]
+                    if len(check_list) == len(matrix[idx]) == len(matrix[idx - 1]):
                         continue
                     else:
                         raise ValueError('Матрица задана неверно')
